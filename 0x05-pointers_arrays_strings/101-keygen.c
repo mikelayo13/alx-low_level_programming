@@ -1,47 +1,21 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-/**
- * is_numerical - check if it is a digit
- * @n: Number
- * Return: If is a number, return 1 else return 0
- */
-int is_numerical(unsigned int n)
+int main(void)
 {
-return (n >= '0' &&  n <= '9');
-}
+	int myrand;
+	int count;
+	int total;
 
-/**
- * _atoi - convert a string to an integer
- *@s: String
- * Return: Return the num
- */
-int _atoi(char *s)
-{
-unsigned int number, i;
-int sign;
+	srand(time(NULL));
+	for (count = 0, total = 2772; total > 122; count++)
+	{
+		myrand = (rand() % 125) + 1;
+		printf("%c", myrand);
+		total -= myrand;
+	}
+	printf("%c", total);
 
-sign = 1;
-number = 0;
-
-
-
-for (i = 0; s[i] != '\0'; i++)
-{
-if (is_numerical(s[i]))
-{
-number = (s[i] - 48) + number * 10;
-
-if (s[i + 1] == ' ')
-break;
-}
-else if (s[i] == '-')
-{
-sign *= -1;
-}
-
-}
-
-return (number *sign);
-
-
+	return (0);
 }
