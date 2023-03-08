@@ -47,4 +47,4 @@ int my_pal(char *s, int l)
 	}
 	else
 		return (0);
-}}
+}
